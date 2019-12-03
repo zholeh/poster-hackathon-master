@@ -1,0 +1,33 @@
+<div class="table-container">
+  <table class="table">
+    <thead class="table-header">
+      <tr>
+        <th>Название продукта</th>
+        <th><input type="text" placeholder="Продукт в базе БЖУк" [(filterBZHUProduct)]></th>
+        <th>Протеины</th>
+        <th>Жиры</th>
+        <th>Углеводы</th>
+        <th>Килокалории</th>
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      <tr *ngFor="let card of cards; let cardLabel = card.ingredient.extras.label | filters:cards:cardLabel">
+        <div>{{card | json}}</div>
+        <td>{{ card.ingredient.ingredient_name }}</td>
+        <td>
+          <typeahead [card]="card" (phrase)="onPhrase($event)"></typeahead>
+        </td>
+        <td><input type="text" [value]="card.match.proteins" /></td>
+        <td><input type="text" [value]="card.match.fats" /></td>
+        <td><input type="text" [value]="card.match.carbohydrates" /></td>
+        <td><input type="text" [value]="card.match.kcal" /></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="flex m-10">
+    <div class="flex-space"></div>
+    <button class="btn btn-save btn-primary-outline" (click)="onButtonClick($event)">
+      Сохранить
+    </button>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+* {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+:host {
+  width: 100%;
+}
+.table-container {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+.table-bzhu {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.btn-save {
+  background: #10B02D;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 16px;
+}
+
+.table-header th {
+  padding: 20px 20px;
+  overflow: hidden;
+  color: #999999;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-body td {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 20px 20px;
+  overflow: hidden;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+body {
+  color: #333333;
+  background-color: #ffffff;
+}
+
+table {
+  width: 100%;
+  background-color: transparent;
+}
+
+.table {
+  font-size: 13px;
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+.calories-value {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.search-container {
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  top:50%;
+  left: 8px;
+  transform: translateY(-50%);
+  opacity: 50%;
+}
+.input-search {
+  height: 31px;
+    padding-left: 30px;
+    font-size: 14px;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: border 0.2s ease-out;
+    box-sizing: border-box;
+}
+
+.input-extras {
+  border: 0;
+  padding: 7px;
+  width: 100%;
+  background: #f7f7f7;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex .flex-space {
+  flex: 1 1;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.options {
+  z-index: 1000;
+  position: absolute;
+  background: #f7f7f7;  
+}
+
+.option {
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+option:hover {
+   background-color: aqua;
+}

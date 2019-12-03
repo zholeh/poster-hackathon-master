@@ -1,0 +1,63 @@
+:host {
+  width: 100%;
+}
+.table-container {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table-header th {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 20px 20px;
+  overflow: hidden;
+  color: #999999;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-body td {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 20px 20px;
+  overflow: hidden;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+body {
+  color: #333333;
+  background-color: #ffffff;
+}
+
+table {
+  width: 100%;
+  background-color: transparent;
+}
+
+.table {
+  font-size: 13px;
+  margin-bottom: 0;
+  border-collapse: collapse;
+}
+
+.calories-value {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.pull-right {
+  float: right;
+}
+
+
+.prod-img {
+  vertical-align: middle;
+  border: 0;
+  outline: none;
+  width: 48px;
+  height: 35px;
+  margin-right: 8px;
+}

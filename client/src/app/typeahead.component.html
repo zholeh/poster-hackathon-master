@@ -1,0 +1,16 @@
+<ng-container>
+  <input
+    #input
+    type="text"
+    [value]="card.ingredient.extras.label"
+    (keyup)="keyUp($event.target.value)"
+  />
+  <div [hidden]="!opened" class="options">
+    <option
+      class="option"
+      *ngFor="let suggestion of typeAhead; trackBy: trackByLabel"
+      (click)="selectElement(suggestion)"
+      >{{ suggestion.label }}</option
+    >
+  </div>
+</ng-container>

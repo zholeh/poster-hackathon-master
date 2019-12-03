@@ -1,0 +1,95 @@
+<div class="search-container">
+  <img
+    class="search-icon"
+    height="16"
+    width="16"
+    src="https://images.vexels.com/media/users/3/132068/isolated/preview/f9bb81e576c1a361c61a8c08945b2c48-search-icon-by-vexels.png"
+  />
+  <input
+    class="input-search"
+    type="text"
+    [(ngModel)]="filterProduct"
+    placeholder="Быстрый поиск"
+  />
+</div>
+<div class="table-container">
+  <table class="table">
+    <thead class="table-header">
+      <tr>
+        <th>
+          Название продукта
+        </th>
+        <th>
+          Продукт в базе БЖУк
+        </th>
+        <th>Белки</th>
+        <th>Жиры</th>
+        <th>Углеводы</th>
+        <th>Килокалории</th>
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      <tr
+        *ngFor="
+          let card of cards
+            | filters
+              : [
+                  [filterProduct, 'ingredient.extras.label'],
+                  [filterBZHUProduct, 'ingredient.ingredient_name']
+                ]
+        "
+      >
+        <td>{{ card.ingredient.ingredient_name }}</td>
+        <td style="position: relative; overflow: visible">
+          <div [hidden]="false" class="options">
+            <option class="option" *ngFor="let suggestion of typeAhead">{{
+              suggestion.label
+            }}</option>
+          </div>
+          <typeahead [card]="card" (phrase)="onPhrase($event)"> </typeahead>
+        </td>
+        <td>
+          <input
+            type="text"
+            class="input-extras"
+            [value]="card.match?.proteins || card.ingredient.extras.proteins"
+            [(ngModel)]="card.ingredient.extras.proteins"
+          />
+        </td>
+        <td>
+          <input
+            class="input-extras"
+            type="text"
+            [value]="card.match?.fats || card.ingredient.extras.fats"
+            [(ngModel)]="card.ingredient.extras.fats"
+          />
+        </td>
+        <td>
+          <input
+            class="input-extras"
+            type="text"
+            [value]="card.match?.carbohydrates || card.ingredient.extras.carbs"
+            [(ngModel)]="card.ingredient.extras.carbs"
+          />
+        </td>
+        <td>
+          <input
+            class="input-extras"
+            type="text"
+            [value]="card.match?.kcal || card.ingredient.extras.kcal"
+            [(ngModel)]="card.ingredient.extras.kcal"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="flex m-10">
+    <!-- <div class="flex-space"></div> -->
+    <button
+      class="btn btn-save btn-primary-outline"
+      (click)="onButtonClick($event)"
+    >
+      Сохранить
+    </button>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="table-container">
+  <table class="table">
+    <thead class="table-header">
+      <tr>
+        <th>Название</th>
+        <th>Белки</th>
+        <th>Жиры</th>
+        <th>Углеводы</th>
+        <th>Килокалории</th>
+      </tr>
+    </thead>
+    <tbody class="table-body">
+      <tr *ngFor="let card of cards">
+        <td>
+          <img
+            class="prod-img"
+            *ngIf="card.image"
+            src="https://las-vegan-niko.joinposter.com{{ card.image }}"
+          />
+          <img
+            class="prod-img"
+            *ngIf="!card.image"
+            src="https://las-vegan-niko.joinposter.com/i/manage/item-photo@2x.png"
+          />
+          {{ card.product_name }}
+        </td>
+        <td>{{ card.proteins | number: ".2-2" }}</td>
+        <td>{{ card.fats | number: ".2-2" }}</td>
+        <td>{{ card.carbs | number: ".2-2" }}</td>
+        <td>{{ card.kcal | number: ".2-2" }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

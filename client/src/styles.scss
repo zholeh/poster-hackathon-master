@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+.btn-primary-outline {
+    background: #10b02d;
+    height: 34px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.15s ease-in;
+    outline: none !important;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary-outline:hover {
+    background: #0d9326;
+  }
+
+.clickable {
+  cursor: pointer;
+}
